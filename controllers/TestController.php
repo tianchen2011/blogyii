@@ -11,4 +11,10 @@ class TestController extends Controller{
 		$cname = Yii::$app->controller->id; 
 		echo "$cname====$aname";
 	}
+
+	public function actionArticle(){
+		$a = Yii::$app->controller->action->id;
+		$b = Yii::$app->controller->id;
+		return $this->render('article',['a'=>$a,'b'=>$b]);
+	}
 }
