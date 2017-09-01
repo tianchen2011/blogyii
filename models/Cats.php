@@ -20,6 +20,11 @@ class Cats extends \yii\db\ActiveRecord
         return 'cats';
     }
 
+    public function getArts()
+    {
+        return $this->hasMany(Arts::className(), ['cat_id' => 'art_id']);
+    }
+
     /**
      * @inheritdoc
      */

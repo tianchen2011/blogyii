@@ -25,17 +25,22 @@ class Arts extends \yii\db\ActiveRecord
         return 'arts';
     }
 
+    public function getCats()
+    {
+        return $this->hasOne(Cats::className(),['art_id'=>'cat_id']);
+    }
+
     public function behaviors()
-{
-    return [
-        [
-            'class' => TimestampBehavior::className(),
-            'createdAtAttribute' => 'pubtime',
-            'updatedAtAttribute' => 'update_time',
-            'value' => new Expression('NOW()'),
-        ],
-    ];
-}
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'pubtime',
+                'updatedAtAttribute' => 'update_time',
+                'value' => new Expression('NOW()'),
+            ],
+        ];
+    }
 
     /**
      * @inheritdoc
