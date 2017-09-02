@@ -43,10 +43,35 @@ $cat = Cats::find()->where(['cat_id'=>$art->cat_id])->one();
 </div>
 
 <?php   //评论表单 ?>
-<?= Html::beginForm(['comment/add', 'id' => $art->id], 'art') ?>
+<?= Html::beginForm(['comments/add', 'art_id' => $art->art_id], 'post') ?>
 <h4>输入评论内容</h4>
 <?= \yidashi\markdown\Markdown::widget(['name' => 'comment', 'language' => 'zh'])?>
 <br>
 <?= Html::submitButton('提交', ['class' => 'btn btn-primary']) ?>
 
 <?= Html::endForm() ?>
+
+
+
+
+<?php   //回复表单 ?>
+<div class="hidden" id="reply" style="margin-left:30px;">
+<br>
+<?= Html::beginForm(['reply/add'], 'post') ?>
+<?= Html::hiddenInput('comment_id', 0, ['id' => 'comment_id']);?>
+<?= \yidashi\markdown\Markdown::widget(['name' => 'reply', 'language' => 'zh'])?>
+<br>
+<?= Html::submitButton('提交', ['class' => 'btn btn-primary']) ?>
+
+<?= Html::endForm() ?>
+</div>
+
+<script type="text/javascript">
+	function reply(reply,comment_id){           //显示回复内容输入框，参数为该元素，和评论id
+		$('#comment_id').val(comment_id);  		//修该表单  comment_id 的值为该评论的 id
+		$('#reply').removeClass('hidden');   	//显示回复输入框
+		$(reply).after($('#reply'));  			//将回复框移到该元素之后
+
+	}
+</script>
+

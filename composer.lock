@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "835144019a91c22c1c9915c81c3c95a5",
+    "content-hash": "01a9fbf5cffd9f980c58e65632b21c0c",
     "packages": [
         {
             "name": "asofter/yii2-imperavi-redactor",
@@ -720,6 +720,33 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2017-07-29T21:54:42+00:00"
+        },
+        {
+            "name": "yidashi/yii2-bootstrap-markdown",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yidashi/yii2-bootstrap-markdown.git",
+                "reference": "9df58be2387f77afe6f7ea508b0a992bf8093289"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yidashi/yii2-bootstrap-markdown/9df58be2387f77afe6f7ea508b0a992bf8093289.zip",
+                "reference": "9df58be2387f77afe6f7ea508b0a992bf8093289",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yidashi\\markdown\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "yii2-bootstrap-markdown",
+            "time": "2016-11-25T02:32:25+00:00"
         },
         {
             "name": "yii2mod/yii2-behaviors",

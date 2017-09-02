@@ -5,12 +5,13 @@ namespace app\controllers;
 use app\models\Arts;
 use yii\data\Pagination;
 use app\models\Cats;
+use app\models\Comment;
 
 class ArtController extends \yii\web\Controller
 {
      public function actionIndex()
     {
-    	$arts = Arts::find()->where(['cat_id' => 1]);
+    	$arts = Arts::find()->where(['and','cat_id>0','cat_id>0']);
     	$count = Arts::find()->count();
         $pages = new Pagination(['totalCount' => $count,'pageSize'=>5]);
         $models = $arts->offset($pages->offset)
