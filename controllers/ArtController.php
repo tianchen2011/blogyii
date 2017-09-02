@@ -6,6 +6,7 @@ use app\models\Arts;
 use yii\data\Pagination;
 use app\models\Cats;
 use app\models\Comment;
+use app\models\Reply;
 
 class ArtController extends \yii\web\Controller
 {
